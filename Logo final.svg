@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#1A1A1A"/>
+
+  <!-- Decorative border -->
+  <rect x="16" y="16" width="480" height="480" rx="12" fill="none" stroke="#C8963E" stroke-width="2" opacity="0.5"/>
+  <rect x="22" y="22" width="468" height="468" rx="10" fill="none" stroke="#E8C97A" stroke-width="1" opacity="0.3"/>
+
+  <!-- Sun rays -->
+  <g stroke="#C8963E" stroke-linecap="round">
+    <!-- Top center -->
+    <line x1="256" y1="108" x2="256" y2="72" stroke-width="10"/>
+    <!-- Top right -->
+    <line x1="316" y1="124" x2="338" y2="96" stroke-width="8"/>
+    <!-- Far right -->
+    <line x1="356" y1="174" x2="388" y2="158" stroke-width="8"/>
+    <!-- Top left -->
+    <line x1="196" y1="124" x2="174" y2="96" stroke-width="8"/>
+    <!-- Far left -->
+    <line x1="156" y1="174" x2="124" y2="158" stroke-width="8"/>
+    <!-- Far right lower -->
+    <line x1="372" y1="230" x2="406" y2="224" stroke-width="7"/>
+    <!-- Far left lower -->
+    <line x1="140" y1="230" x2="106" y2="224" stroke-width="7"/>
+  </g>
+
+  <!-- Sun semicircle (rising) -->
+  <path d="M120 272 A136 136 0 0 1 392 272" fill="#C8963E"/>
+  <!-- Sun shine gradient overlay -->
+  <path d="M140 272 A116 116 0 0 1 372 272" fill="#E8C97A" opacity="0.3"/>
+
+  <!-- Horizon line -->
+  <rect x="90" y="268" width="332" height="12" rx="6" fill="#E8C97A"/>
+
+  <!-- Ground / base band -->
+  <rect x="90" y="278" width="332" height="28" rx="0" fill="#C8963E" opacity="0.25"/>
+
+  <!-- Property name: SURYAVANSHAM -->
+  <text
+    x="256"
+    y="360"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="44"
+    font-weight="bold"
+    letter-spacing="4"
+    fill="#E8C97A"
+    text-anchor="middle"
+  >SURYAVANSHAM</text>
+
+  <!-- Thin separator line -->
+  <rect x="140" y="374" width="232" height="1.5" fill="#C8963E" opacity="0.7"/>
+
+  <!-- Subtitle: PALACE -->
+  <text
+    x="256"
+    y="408"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="30"
+    font-weight="normal"
+    letter-spacing="10"
+    fill="#C8963E"
+    text-anchor="middle"
+  >PALACE</text>
+
+  <!-- Tagline: AYODHYA -->
+  <text
+    x="256"
+    y="450"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="16"
+    font-weight="normal"
+    letter-spacing="6"
+    fill="#888888"
+    text-anchor="middle"
+  >✦  AYODHYA  ✦</text>
+</svg>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Options - Pick Your Landing Page</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #111; color: #fff; }
+        h1 { text-align: center; padding: 40px 20px 10px; font-size: 1.5rem; }
+        p.sub { text-align: center; color: #888; margin-bottom: 40px; font-size: 0.9rem; }
+        .option-label {
+            text-align: center; padding: 20px;
+            font-size: 1.2rem; font-weight: 700;
+            color: #E8C97A; letter-spacing: 1px;
+        }
+        .hero {
+            width: 100%; height: 80vh; min-height: 500px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Shri_Ram_Janambhoomi_Mandir%2C_Ayodhya.jpg/1920px-Shri_Ram_Janambhoomi_Mandir%2C_Ayodhya.jpg') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden; text-align: center;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 750px; padding: 0 24px; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; border-radius: 8px;
+            font-size: 0.95rem; font-weight: 600; cursor: pointer;
+            border: none; text-decoration: none;
+        }
+        .btn-primary { background: #C8963E; color: #fff; }
+        .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); }
+        .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+        .divider { height: 4px; background: #E8C97A; margin: 0; }
+
+        /* ===== OPTION A: Bold Orange AYODHYA, clean layout ===== */
+        .hero-a::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 100%);
+        }
+        .city-a {
+            font-size: clamp(4.5rem, 12vw, 8rem);
+            font-weight: 900; letter-spacing: 10px;
+            text-transform: uppercase; line-height: 1;
+            margin-bottom: 12px;
+            color: #FF6B00;
+            text-shadow: 0 0 60px rgba(255,107,0,0.4), 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .tagline-a {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300; color: rgba(255,255,255,0.9);
+            margin-bottom: 8px; letter-spacing: 1px;
+        }
+        .sub-a {
+            font-size: 1rem; color: rgba(255,255,255,0.55);
+            max-width: 480px; margin: 0 auto; line-height: 1.7;
+        }
+
+        /* ===== OPTION B: Warm gradient orange, subtitle style ===== */
+        .hero-b::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(80,30,0,0.4) 100%);
+        }
+        .city-b {
+            font-size: clamp(5rem, 13vw, 9rem);
+            font-weight: 900; letter-spacing: 8px;
+            text-transform: uppercase; line-height: 1;
+            margin-bottom: 4px;
+            background: linear-gradient(180deg, #FF8C00 0%, #FF5500 50%, #CC4400 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 4px 20px rgba(255,85,0,0.3));
+        }
+        .tagline-b {
+            font-size: 1rem; font-weight: 600; color: #FF8C00;
+            letter-spacing: 6px; text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .sub-b {
+            font-size: 1.1rem; color: rgba(255,255,255,0.7);
+            max-width: 500px; margin: 0 auto; line-height: 1.7;
+        }
+
+        /* ===== OPTION C: Saffron glow, centered minimal ===== */
+        .hero-c::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.6) 100%);
+        }
+        .city-c {
+            font-size: clamp(4rem, 11vw, 7.5rem);
+            font-weight: 800; letter-spacing: 12px;
+            text-transform: uppercase; line-height: 1;
+            margin-bottom: 16px;
+            color: transparent;
+            -webkit-text-stroke: 2px #FF7A00;
+            text-shadow: 0 0 40px rgba(255,122,0,0.3);
+        }
+        .tagline-c {
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            font-weight: 700; color: #fff;
+            margin-bottom: 8px;
+        }
+        .tagline-c span { color: #FF8C00; }
+        .sub-c {
+            font-size: 0.95rem; color: rgba(255,255,255,0.55);
+            max-width: 460px; margin: 0 auto; line-height: 1.7;
+        }
+
+        /* ===== OPTION D: Fiery orange with large readable text ===== */
+        .hero-d::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(30,10,0,0.65) 100%);
+        }
+        .city-d {
+            font-size: clamp(4.5rem, 12vw, 8rem);
+            font-weight: 900; letter-spacing: 6px;
+            text-transform: uppercase; line-height: 1;
+            margin-bottom: 10px;
+            background: linear-gradient(180deg, #FFA040 0%, #FF6600 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 15px rgba(255,100,0,0.4));
+        }
+        .tagline-d {
+            font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+            font-weight: 600; color: #fff;
+            margin-bottom: 12px;
+        }
+        .sub-d {
+            font-size: 1rem; color: rgba(255,255,255,0.6);
+            max-width: 500px; margin: 0 auto; line-height: 1.7;
+        }
+        .btn-d { background: #FF6600; color: #fff; }
+    </style>
+</head>
+<body>
+
+<h1>Pick Your Hero Style</h1>
+<p class="sub">4 options with orange AYODHYA treatments. Scroll down to see all.</p>
+
+<!-- OPTION A -->
+<div class="option-label">OPTION A &mdash; Bold Flat Orange</div>
+<div class="hero hero-a">
+    <div class="hero-content">
+        <div class="city-a">AYODHYA</div>
+        <div class="tagline-a">Your Home in the Holy City</div>
+        <div class="sub-a">Comfortable, clean, and affordable accommodation. Just minutes from Ram Mandir and all major pilgrimage sites.</div>
+        <div class="actions">
+            <a href="#" class="btn btn-primary">Book Your Stay</a>
+            <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- OPTION B -->
+<div class="option-label">OPTION B &mdash; Fiery Gradient + Subtitle</div>
+<div class="hero hero-b">
+    <div class="hero-content">
+        <div class="city-b">AYODHYA</div>
+        <div class="tagline-b">Suryavansham Palace</div>
+        <div class="sub-b">Your home in the holy city. Comfortable and affordable stays just minutes from Ram Mandir and all major pilgrimage sites.</div>
+        <div class="actions">
+            <a href="#" class="btn btn-primary">Book Your Stay</a>
+            <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- OPTION C -->
+<div class="option-label">OPTION C &mdash; Outlined Saffron Glow</div>
+<div class="hero hero-c">
+    <div class="hero-content">
+        <div class="city-c">AYODHYA</div>
+        <div class="tagline-c">Your Home in the <span>Holy City</span></div>
+        <div class="sub-c">Comfortable, clean, and affordable accommodation. Just minutes from Ram Mandir and all major pilgrimage sites.</div>
+        <div class="actions">
+            <a href="#" class="btn btn-primary">Book Your Stay</a>
+            <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- OPTION D -->
+<div class="option-label">OPTION D &mdash; Warm Amber Gradient + Orange CTA</div>
+<div class="hero hero-d">
+    <div class="hero-content">
+        <div class="city-d">AYODHYA</div>
+        <div class="tagline-d">Your Home in the Holy City</div>
+        <div class="sub-d">Comfortable, clean, and affordable accommodation at Suryavansham Palace. Just minutes from Ram Mandir and all major pilgrimage sites.</div>
+        <div class="actions">
+            <a href="#" class="btn btn-d">Book Your Stay</a>
+            <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+    </div>
+</div>
+
+<p class="sub" style="padding: 40px 20px;">Pick A, B, C, or D and I'll apply it!</p>
+
+</body>
+</html>
