@@ -139,12 +139,22 @@
             <p>Clean, comfortable, and fully furnished</p>
             <div class="line"></div>
         </div>
-        <div class="gallery-scroll">
-            <div class="gallery-item"><img src="Airbnb%20Images/New%20edited/Suryavansham%20Palace.png" alt="Suryavansham Palace at night" loading="lazy"></div>
-            <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/airbnb_exterior_edited_4x3_02.jpg" alt="Property entrance" loading="lazy"></div>
-            <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/airbnb_exterior_edited_4x3_03.jpg" alt="Building exterior" loading="lazy"></div>
-            <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/airbnb_common_area_edited_4x3.jpg" alt="Common area" loading="lazy"></div>
-            <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/airbnb_staircase_edited_4x3.jpg" alt="Staircase" loading="lazy"></div>
+        <div class="gallery-wrapper">
+            <button class="gallery-btn gallery-btn-prev" id="galleryPrev" aria-label="Previous photos">&#10094;</button>
+            <div class="gallery-scroll" id="galleryScroll">
+                <div class="gallery-item"><img src="Airbnb%20Images/New%20edited/Suryavansham%20Palace.png" alt="Suryavansham Palace at night" loading="lazy"></div>
+                <div class="gallery-item"><img src="Airbnb%20Images/New%20edited/Delux%201bhk/Suryavansham%20Palace%20Canva%20(6).png" alt="Deluxe 1BHK bedroom" loading="lazy"></div>
+                <div class="gallery-item"><img src="Airbnb%20Images/New%20edited/Delux%20room/Suryavansham%20Palace%20Canva.png" alt="Deluxe Room" loading="lazy"></div>
+                <div class="gallery-item"><img src="Airbnb%20Images/New%20edited/Delux%201bhk/Suryavansham%20Palace%20Canva%20(3).png" alt="Deluxe 1BHK living area" loading="lazy"></div>
+                <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/airbnb_exterior_edited_4x3_02.jpg" alt="Property front view" loading="lazy"></div>
+                <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/airbnb_exterior_edited_4x3_03.jpg" alt="Property entrance" loading="lazy"></div>
+                <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/airbnb_exterior_edited_4x3_04.jpg" alt="Building exterior" loading="lazy"></div>
+                <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/airbnb_common_area_edited_4x3.jpg" alt="Common area" loading="lazy"></div>
+                <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/airbnb_staircase_edited_4x3.jpg" alt="Staircase" loading="lazy"></div>
+                <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/about_us_banner_refined_4x3.jpg" alt="Property overview" loading="lazy"></div>
+                <div class="gallery-item"><img src="Airbnb%20Images/Building%20Exterior/ChatGPT%20Image%20Mar%204,%202026,%2012_36_51%20AM.png" alt="Suryavansham Palace" loading="lazy"></div>
+            </div>
+            <button class="gallery-btn gallery-btn-next" id="galleryNext" aria-label="Next photos">&#10095;</button>
         </div>
     </div>
 </section>
@@ -275,6 +285,15 @@
 </footer>
 
 <script>
+// Gallery arrow buttons
+const galleryScroll = document.getElementById('galleryScroll');
+document.getElementById('galleryPrev').addEventListener('click', () => {
+    galleryScroll.scrollBy({ left: -316, behavior: 'smooth' });
+});
+document.getElementById('galleryNext').addEventListener('click', () => {
+    galleryScroll.scrollBy({ left: 316, behavior: 'smooth' });
+});
+
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
